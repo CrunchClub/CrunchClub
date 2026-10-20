@@ -29,11 +29,11 @@ ul { list-style: none; }
 img { background: var(--paper-deep); }
 
 /* ヘッダー */
-.header { padding: 16px 24px 8px; }
-.logo img { width: 120px; height: auto; background: none; }
+.header { padding: 16px 0px 0px; }
+.logo img { width: 150px; height: 110px; background: none; }
 
 /* ヒーロー */
-.hero { position: relative; margin-top: 8px; }
+.hero { position: relative; margin-top: 0px; }
 .hero__img {
   width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
   border-radius: 6px 6px 0 0;
