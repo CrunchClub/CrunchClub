@@ -1,0 +1,125 @@
+/* ===== 色・フォントはここで調整 ===== */
+:root {
+  --paper: #f3efe8;
+  --paper-deep: #e8e1d5;
+  --ink: #222120;
+  --ink-soft: #6f6a62;
+  --line: #cfc8bb;
+  --font-ja: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-en: "Cormorant Garamond", Georgia, serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-ja);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.9;
+  max-width: 480px;           /* PCで開いてもスマホ幅で表示 */
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+ul { list-style: none; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* 画像が未設定でも枠が崩れないようにする */
+img { background: var(--paper-deep); }
+
+/* ヘッダー */
+.header { padding: 16px 24px 8px; }
+.logo img { width: 120px; height: auto; background: none; }
+
+/* ヒーロー */
+.hero { position: relative; margin-top: 8px; }
+.hero__img {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+.hero::after { /* 画像の下を紙色にぼかして文字を読みやすく */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 60%;
+  background: linear-gradient(to top, var(--paper) 35%, transparent);
+  pointer-events: none;
+}
+.hero__en {
+  position: absolute; top: 28px; right: 24px; z-index: 2;
+  font: italic 400 15px/1.5 var(--font-en); color: var(--ink-soft);
+  text-align: right; transform: rotate(-8deg);
+}
+.hero__body { position: relative; z-index: 2; margin-top: -42%; padding: 0 24px 40px; }
+.hero__title { font-size: 28px; font-weight: 500; letter-spacing: .18em; line-height: 1.7; }
+.hero__text { margin: 18px 0 28px; font-size: 13px; letter-spacing: .12em; line-height: 2.1; }
+
+.btn {
+  display: inline-block; padding: 14px 34px; border-radius: 999px;
+  font-size: 13px; letter-spacing: .14em; text-decoration: none;
+}
+.btn--dark { background: var(--ink); color: var(--paper); }
+
+/* メニュー */
+.menu { padding: 24px 20px 48px; }
+.menu__title {
+  display: flex; flex-direction: column; font: 500 34px/1.2 var(--font-en); letter-spacing: .04em;
+}
+.menu__title-ja { margin-top: 6px; font: 400 12px var(--font-ja); letter-spacing: .2em; color: var(--ink-soft); }
+
+.tabs {
+  display: flex; gap: 6px; margin: 20px -20px 24px; padding: 0 20px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
+.tab {
+  flex: none; padding: 7px 16px; border-radius: 999px;
+  font-size: 12px; letter-spacing: .1em; white-space: nowrap; color: var(--ink-soft);
+}
+.tab.is-active { background: var(--ink); color: var(--paper); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 14px; }
+.card[hidden] { display: none; }
+.card__btn { display: block; width: 100%; text-align: left; }
+.card__btn img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; }
+.card__name { display: block; margin-top: 10px; font-size: 15px; letter-spacing: .1em; }
+.card__desc { display: block; margin-top: 2px; font-size: 10.5px; line-height: 1.7; color: var(--ink-soft); letter-spacing: .06em; }
+.card__price { display: block; margin-top: 6px; font-size: 15px; letter-spacing: .06em; }
+
+/* 出店情報 */
+.info { padding: 32px 24px 40px; border-top: 1px solid var(--line); margin: 0 20px; padding-left: 0; padding-right: 0; }
+.info__title { font-size: 15px; font-weight: 500; letter-spacing: .2em; margin-bottom: 14px; }
+.info__list div { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.info__list dt { flex: none; width: 4.5em; color: var(--ink-soft); }
+.info__note { margin-top: 14px; font-size: 11px; color: var(--ink-soft); }
+
+.footer { padding: 28px 0 36px; text-align: center; font: 400 12px var(--font-en); letter-spacing: .3em; color: var(--ink-soft); }
+
+/* 商品詳細(画面いっぱいのシート) */
+.sheet {
+  width: 100%; max-width: 480px; height: 100%; max-height: 100%;
+  margin: 0 auto; border: 0; background: var(--paper); color: var(--ink); overflow-y: auto;
+}
+.sheet::backdrop { background: rgba(34, 33, 32, .5); }
+.sheet[open] { animation: slide-up .28s ease-out; }
+@keyframes slide-up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.sheet__inner { padding: 20px 20px calc(32px + env(safe-area-inset-bottom)); }
+.sheet__back { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: 12px; letter-spacing: .1em; }
+.sheet__back::before { content: "←"; font-size: 16px; }
+.sheet__main { position: relative; }
+.sheet__main img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.sheet__en { position: absolute; top: 14px; right: 16px; font: italic 400 15px var(--font-en); color: var(--ink-soft); transform: rotate(-8deg); }
+.sheet__thumbs { display: flex; gap: 8px; margin-top: 10px; }
+.sheet__thumbs[hidden] { display: none; }
+.thumb { flex: 1; max-width: 25%; aspect-ratio: 1; border: 1px solid transparent; border-radius: 3px; overflow: hidden; opacity: .65; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb.is-active { border-color: var(--ink); opacity: 1; }
+.sheet__name { margin-top: 24px; font-size: 22px; font-weight: 500; letter-spacing: .14em; }
+.sheet__long { margin-top: 12px; font-size: 13px; letter-spacing: .08em; color: var(--ink-soft); line-height: 2; }
+.sheet__price { margin: 22px 0 18px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 24px; letter-spacing: .06em; }
+.sheet__meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 11px; line-height: 1.6; }
+.sheet__meta span { display: block; color: var(--ink-soft); }
+.sheet__meta b { font-weight: 500; letter-spacing: .06em; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sheet[open] { animation: none; }
+}

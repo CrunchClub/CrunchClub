@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>お店の名前 | メニュー</title>
+<meta name="description" content="文化祭メニュー">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ヘッダー(ロゴは images/logo.png に差し替え) -->
+<header class="header">
+  <a href="#top" class="logo"><img src="images/logo.png" alt="お店の名前" width="140" height="80"></a>
+</header>
+
+<main id="top">
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <p class="hero__en" aria-hidden="true">Small<br>Sweets,<br>Big<br>Happiness.</p>
+    <img class="hero__img" src="images/hero.jpg" alt="商品の写真" width="800" height="1000">
+    <div class="hero__body">
+      <h1 class="hero__title">ひとくちで、<br>しあわせを。</h1>
+      <p class="hero__text">
+        サクッと、ふわっと、<br>
+        やさしい甘さがひろがる。<br>
+        小さなひと粒に、<br>
+        たくさんのしあわせを詰め込みました。
+      </p>
+      <a class="btn btn--dark" href="#menu">メニューを見る</a>
+    </div>
+  </section>
+
+  <!-- メニュー -->
+  <section class="menu" id="menu">
+    <h2 class="menu__title">Menu<span class="menu__title-ja">メニュー</span></h2>
+
+    <!-- カテゴリ切り替え:data-filter と商品の data-category を合わせる -->
+    <nav class="tabs" aria-label="カテゴリ">
+      <button class="tab is-active" data-filter="all">すべて</button>
+      <button class="tab" data-filter="plain">プレーン</button>
+      <button class="tab" data-filter="strawberry">いちご</button>
+      <button class="tab" data-filter="matcha">抹茶</button>
+      <button class="tab" data-filter="choco">チョコレート</button>
+    </nav>
+
+    <!-- 商品カード。1枚ぶんをコピーして増やせます -->
+    <ul class="grid">
+      <li class="card" data-category="plain"
+          data-name="プレーン"
+          data-en="Plain"
+          data-desc="やさしい甘さの定番。どなたにも。"
+          data-long="サクッと軽い食感の生地に、ほんのり甘い香り。まずはこれから、という定番のひと粒です。"
+          data-price="420"
+          data-allergen="小麦・卵・乳"
+          data-storage="常温(当日中)"
+          data-images="images/plain-1.jpg,images/plain-2.jpg">
+        <button class="card__btn" type="button">
+          <img src="images/plain-1.jpg" alt="プレーン" width="400" height="400" loading="lazy">
+          <span class="card__name">プレーン</span>
+          <span class="card__desc">やさしい甘さの定番。どなたにも。</span>
+          <span class="card__price">¥420</span>
+        </button>
+      </li>
+
+      <li class="card" data-category="strawberry"
+          data-name="いちごクリーム"
+          data-en="Strawberry Cream"
+          data-desc="甘酸っぱい苺と、なめらかなクリーム。"
+          data-long="甘酸っぱい苺と、なめらかなクリーム。ふんわりとした生地に、いちごの果肉をのせた人気のフレーバーです。"
+          data-price="480"
+          data-allergen="小麦・卵・乳"
+          data-storage="要冷蔵(当日中)"
+          data-images="images/strawberry-1.jpg,images/strawberry-2.jpg,images/strawberry-3.jpg">
+        <button class="card__btn" type="button">
+          <img src="images/strawberry-1.jpg" alt="いちごクリーム" width="400" height="400" loading="lazy">
+          <span class="card__name">いちごクリーム</span>
+          <span class="card__desc">甘酸っぱい苺と、なめらかなクリーム。</span>
+          <span class="card__price">¥480</span>
+        </button>
+      </li>
+
+      <li class="card" data-category="matcha"
+          data-name="抹茶"
+          data-en="Matcha"
+          data-desc="濃い抹茶の香りと、ほろ苦さ。"
+          data-long="濃い抹茶の香りと、ほろ苦さ。甘さ控えめで、大人の方にもおすすめです。"
+          data-price="460"
+          data-allergen="小麦・卵・乳"
+          data-storage="要冷蔵(当日中)"
+          data-images="images/matcha-1.jpg">
+        <button class="card__btn" type="button">
+          <img src="images/matcha-1.jpg" alt="抹茶" width="400" height="400" loading="lazy">
+          <span class="card__name">抹茶</span>
+          <span class="card__desc">濃い抹茶の香りと、ほろ苦さ。</span>
+          <span class="card__price">¥460</span>
+        </button>
+      </li>
+
+      <li class="card" data-category="choco"
+          data-name="チョコレート"
+          data-en="Chocolate"
+          data-desc="とろけるチョコレートをたっぷりと。"
+          data-long="とろけるチョコレートをたっぷりと。しっかり甘いものが食べたい日に。"
+          data-price="480"
+          data-allergen="小麦・卵・乳"
+          data-storage="要冷蔵(当日中)"
+          data-images="images/choco-1.jpg">
+        <button class="card__btn" type="button">
+          <img src="images/choco-1.jpg" alt="チョコレート" width="400" height="400" loading="lazy">
+          <span class="card__name">チョコレート</span>
+          <span class="card__desc">とろけるチョコレートをたっぷりと。</span>
+          <span class="card__price">¥480</span>
+        </button>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 店舗情報(文化祭向け。不要なら削除) -->
+  <section class="info">
+    <h2 class="info__title">出店情報</h2>
+    <dl class="info__list">
+      <div><dt>日時</dt><dd>○月○日(○)〇:〇〇〜〇:〇〇</dd></div>
+      <div><dt>場所</dt><dd>○号館 ○階 ○年○組</dd></div>
+      <div><dt>お支払い</dt><dd>現金のみ</dd></div>
+    </dl>
+    <p class="info__note">※ 数に限りがあります。売り切れの際はご了承ください。</p>
+  </section>
+</main>
+
+<footer class="footer"><span>お店の名前</span></footer>
+
+<!-- 商品詳細(JSで中身を差し込みます) -->
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-name">
+  <div class="sheet__inner">
+    <button class="sheet__back" type="button" data-close>メニューに戻る</button>
+    <div class="sheet__main">
+      <img id="sheet-main" src="" alt="" width="800" height="600">
+      <span class="sheet__en" id="sheet-en" aria-hidden="true"></span>
+    </div>
+    <div class="sheet__thumbs" id="sheet-thumbs"></div>
+    <h3 class="sheet__name" id="sheet-name"></h3>
+    <p class="sheet__long" id="sheet-long"></p>
+    <p class="sheet__price" id="sheet-price"></p>
+    <ul class="sheet__meta">
+      <li><span>特定原材料</span><b id="sheet-allergen"></b></li>
+      <li><span>保存方法</span><b id="sheet-storage"></b></li>
+    </ul>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  // カテゴリ切り替え
+  var tabs = document.querySelectorAll('.tab');
+  var cards = document.querySelectorAll('.card');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+      var f = tab.dataset.filter;
+      cards.forEach(function (c) {
+        c.hidden = !(f === 'all' || c.dataset.category === f);
+      });
+    });
+  });
+
+  // 商品詳細
+  var sheet = document.getElementById('sheet');
+  var $ = function (id) { return document.getElementById(id); };
+  cards.forEach(function (card) {
+    card.querySelector('.card__btn').addEventListener('click', function () {
+      var d = card.dataset;
+      var imgs = (d.images || '').split(',').filter(Boolean);
+      $('sheet-name').textContent = d.name;
+      $('sheet-en').textContent = d.en || '';
+      $('sheet-long').textContent = d.long || d.desc;
+      $('sheet-price').textContent = '¥' + Number(d.price).toLocaleString();
+      $('sheet-allergen').textContent = d.allergen || '-';
+      $('sheet-storage').textContent = d.storage || '-';
+      $('sheet-main').src = imgs[0] || '';
+      $('sheet-main').alt = d.name;
+      var thumbs = $('sheet-thumbs');
+      thumbs.innerHTML = '';
+      thumbs.hidden = imgs.length < 2;
+      imgs.forEach(function (src, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'thumb' + (i === 0 ? ' is-active' : '');
+        b.innerHTML = '<img alt="" src="' + src + '">';
+        b.addEventListener('click', function () {
+          $('sheet-main').src = src;
+          thumbs.querySelectorAll('.thumb').forEach(function (t) { t.classList.remove('is-active'); });
+          b.classList.add('is-active');
+        });
+        thumbs.appendChild(b);
+      });
+      sheet.showModal();
+      sheet.scrollTop = 0;
+    });
+  });
+  sheet.querySelector('[data-close]').addEventListener('click', function () { sheet.close(); });
+})();
+</script>
+</body>
+</html>
