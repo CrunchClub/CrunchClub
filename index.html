@@ -22,7 +22,13 @@
   <!-- ヒーロー -->
   <section class="hero">
     <p class="hero__en" aria-hidden="true">Small<br>Sweets,<br>Big<br>Happiness.</p>
-    <img class="hero__img" src="img/main.JPG" alt="商品の写真" width="800" height="1000">
+    <!-- スライド画像。<img>を増減すれば枚数も変わります(最初の1枚に is-active) -->
+    <div class="hero__slides" id="slides">
+      <img class="slide is-active" src="img/main.JPG" alt="商品の写真1" width="800" height="1000">
+      <img class="slide" src="img/main_matcha.png" alt="商品の写真2" width="800" height="1000">
+      <img class="slide" src="img/main_chocolate_ps.png" alt="商品の写真3" width="800" height="1000">
+      <img class="slide" src="img/main_strawberry.JPG" alt="商品の写真4" width="800" height="1000">
+    </div>
     <div class="hero__body">
       <h1 class="hero__title">ひとくちで、<br>しあわせを。</h1>
       <p class="hero__text">
@@ -32,6 +38,7 @@
         たくさんのしあわせを詰め込みました。
       </p>
       <a class="btn btn--dark" href="#menu">メニューを見る</a>
+      <div class="dots" id="dots" role="group" aria-label="スライド切り替え"></div>
     </div>
   </section>
 
@@ -60,7 +67,7 @@
           data-storage="常温(当日中)"
           data-images="images/plain-1.jpg,images/plain-2.jpg">
         <button class="card__btn" type="button">
-          <img src="img/plain.JPG" alt="プレーン" width="400" height="400" loading="lazy">
+          <img src="img/plain.JPG" alt="プレーン" width="400" height="400" loading="eager">
           <span class="card__name">プレーン</span>
           <span class="card__desc">やさしい甘さの定番。どなたにも。</span>
           <span class="card__price">¥200</span>
@@ -77,7 +84,7 @@
           data-storage="要冷蔵(当日中)"
           data-images="images/strawberry-1.jpg,images/strawberry-2.jpg,images/strawberry-3.jpg">
         <button class="card__btn" type="button">
-          <img src="img/strawberry.JPG" alt="いちごクリーム" width="400" height="400" loading="lazy">
+          <img src="img/strawberry.JPG" alt="いちごクリーム" width="400" height="400" loading="eager">
           <span class="card__name">いちごクリーム</span>
           <span class="card__desc">甘酸っぱい苺と、なめらかなクリーム。</span>
           <span class="card__price">¥300</span>
@@ -94,7 +101,7 @@
           data-storage="要冷蔵(当日中)"
           data-images="images/matcha-1.jpg">
         <button class="card__btn" type="button">
-          <img src="img/matcha.JPG" alt="抹茶" width="400" height="400" loading="lazy">
+          <img src="img/matcha.JPG" alt="抹茶" width="400" height="400" loading="eager">
           <span class="card__name">抹茶</span>
           <span class="card__desc">濃い抹茶の香りと、ほろ苦さ。</span>
           <span class="card__price">¥300</span>
@@ -111,7 +118,7 @@
           data-storage="要冷蔵(当日中)"
           data-images="images/choco-1.jpg">
         <button class="card__btn" type="button">
-          <img src="img/chocobanana.JPG" alt="チョコバナナ" width="400" height="400" loading="lazy">
+          <img src="img/chocobanana.JPG" alt="チョコバナナ" width="400" height="400" loading="eager">
           <span class="card__name">チョコレート</span>
           <span class="card__desc">とろけるチョコレートをたっぷりと。</span>
           <span class="card__price">¥300</span>
@@ -128,7 +135,7 @@
           data-storage="要冷蔵(当日中)"
           data-images="images/matcha-1.jpg">
         <button class="card__btn" type="button">
-          <img src="img/montblanc.JPG" alt="モンブラン" width="400" height="400" loading="lazy">
+          <img src="img/montblanc.JPG" alt="モンブラン" width="400" height="400" loading="eager">
           <span class="card__name">モンブラン</span>
           <span class="card__desc">濃い抹茶の香りと、ほろ苦さ。</span>
           <span class="card__price">¥400</span>
@@ -145,7 +152,7 @@
           data-storage=""
           data-images="images/matcha-1.jpg">
         <button class="card__btn" type="button">
-          <img src="img/asort.JPG" alt="アソート" width="400" height="400" loading="lazy">
+          <img src="img/asort.JPG" alt="アソート" width="400" height="400" loading="eager">
           <span class="card__name">アソート</span>
           <span class="card__desc"></span>
           <span class="card__price">¥500</span>
@@ -158,8 +165,11 @@
   <section class="info">
     <h2 class="info__title">出店情報</h2>
     <dl class="info__list">
-      <div><dt>日時</dt><dd>○月○日(○)〇:〇〇〜〇:〇〇</dd></div>
+      <div class="map">
+		    <p><img src="img/map_dum.png" alt="地図"></p>
+	    </div>
       <div><dt>場所</dt><dd>出会いの広場</dd></div>
+      <div><dt>日時</dt><dd>○月○日(○)〇:〇〇〜〇:〇〇</dd></div>
       <div><dt>お支払い</dt><dd>現金のみ</dd></div>
     </dl>
     <p class="info__note">※ 数に限りがあります。売り切れの際はご了承ください。</p>
@@ -189,6 +199,37 @@
 
 <script>
 (function () {
+// ヒーローのスライドショー
+  var INTERVAL = 4000; // 切り替え間隔(ミリ秒)。変更したい場合はここ
+  var slides = document.querySelectorAll('#slides .slide');
+  var dotsBox = document.getElementById('dots');
+  var current = 0, timer = null;
+  var dots = [];
+  slides.forEach(function (_, i) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'dot' + (i === 0 ? ' is-active' : '');
+    d.setAttribute('aria-label', (i + 1) + '枚目を表示');
+    d.addEventListener('click', function () { show(i); start(); });
+    dotsBox.appendChild(d);
+    dots.push(d);
+  });
+  function show(n) {
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }
+  function start() {
+    stop();
+    if (slides.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(function () { show(current + 1); }, INTERVAL);
+  }
+  function stop() { clearInterval(timer); }
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  start();
+
   // カテゴリ切り替え
   var tabs = document.querySelectorAll('.tab');
   var cards = document.querySelectorAll('.card');
