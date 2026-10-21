@@ -38,7 +38,10 @@
         ざくざく、ぱりぱりのシュー生地の中に、<br>
         クリームやフルーツなどを包みました。
       </p>
-      <a class="btn btn--dark" href="#menu">メニューを見る</a>
+      <div class="hero__links">
+        <a class="btn btn--dark" href="#menu">メニューを見る</a>
+        <a class="btn btn--light" href="#info">出店情報を見る</a>
+      </div>
       <div class="dots" id="dots" role="group" aria-label="スライド切り替え"></div>
     </div>
   </section>
@@ -47,24 +50,23 @@
   <section class="menu" id="menu">
     <h2 class="menu__title">Menu<span class="menu__title-ja">メニュー</span></h2>
 
-    <!-- カテゴリ切り替え:data-filter と商品の data-category を合わせる -->
+    <!-- カテゴリ切り替え:data-filter と商品の data-category を合わせる 
     <nav class="tabs" aria-label="カテゴリ">
       <button class="tab is-active" data-filter="all">すべて</button>
       <button class="tab" data-filter="plain">プレーン</button>
-      <button class="tab" data-filter="strawberry">いちご</button>
-      <button class="tab" data-filter="matcha">抹茶</button>
-      <button class="tab" data-filter="choco">チョコレート</button>
+      <button class="tab" data-filter="strawberry">ショートケーキ</button>
+      <button class="tab" data-filter="matcha">小倉静岡抹茶</button>
+      <button class="tab" data-filter="choco">チョコバナナ</button>
       <button class="tab" data-filter="montblanc">モンブラン</button>
       <button class="tab" data-filter="asort">アソート</button>
-    </nav>
-
+    </nav>-->
     <!-- 商品カード。1枚ぶんをコピーして増やせます -->
     <ul class="grid">
       <li class="card" data-category="plain"
           data-name="プレーン"
           data-en="Plain"
           data-desc="やさしい甘さの定番。どなたにも。"
-          data-long="サクッと軽い食感の生地に、ほんのり甘い香り。まずはこれから、という定番のひと粒です。"
+          data-long="サクッと軽い食感の生地に、バターの香り。まずはこれから、という定番のひと粒です。"
           data-price="300"
           data-images="img/plain.JPG,img/zoom_plain.JPG">
         <button class="card__btn" type="button">
@@ -76,31 +78,31 @@
       </li>
 
       <li class="card" data-category="strawberry"
-          data-name="いちごクリーム"
+          data-name="ショートケーキ"
           data-en="Strawberry Cream"
           data-desc="甘酸っぱい苺と、なめらかなクリーム。"
-          data-long="甘酸っぱい苺と、なめらかなクリーム。ふんわりとした生地に、いちごの果肉をのせた人気のフレーバーです。"
+          data-long="華美な装飾、苺ショートを思わせる。酸味と甘味のバランスのとれた人気フレーバーです。"
           data-price="300"
           data-images="img/strawberry.JPG,img/zoom_strawberry.JPG">
         <button class="card__btn" type="button">
-          <img src="img/strawberry.JPG" alt="いちごクリーム" width="400" height="400" loading="eager">
-          <span class="card__name">いちごクリーム</span>
+          <img src="img/strawberry.JPG" alt="ショートケーキ" width="400" height="400" loading="eager">
+          <span class="card__name">ショートケーキ</span>
           <span class="card__desc">甘酸っぱい苺と、なめらかなクリーム。</span>
           <span class="card__price">¥300</span>
         </button>
       </li>
 
       <li class="card" data-category="matcha"
-          data-name="抹茶"
+          data-name="小倉静岡抹茶"
           data-en="Matcha"
-          data-desc="濃い抹茶の香りと、ほろ苦さ。"
-          data-long="濃い抹茶の香りと、ほろ苦さ。甘さ控えめで、大人の方にもおすすめです。"
+          data-desc="濃い抹茶の香りと、あんこの上品な甘味。"
+          data-long="静岡県産抹茶パウダーを使用しました。ほろ苦い後味で、大人の方にもおすすめです。"
           data-price="300"
           data-images="img/matcha.JPG,img/zoom_matcha.JPG">
         <button class="card__btn" type="button">
           <img src="img/matcha.JPG" alt="抹茶" width="400" height="400" loading="eager">
-          <span class="card__name">抹茶</span>
-          <span class="card__desc">濃い抹茶の香りと、ほろ苦さ。</span>
+          <span class="card__name">小倉静岡抹茶</span>
+          <span class="card__desc">濃い抹茶の香りと、あんこの上品な甘味。</span>
           <span class="card__price">¥300</span>
         </button>
       </li>
@@ -109,7 +111,7 @@
           data-name="チョコバナナ"
           data-en="Chocolate"
           data-desc="とろけるチョコレートをたっぷりと。"
-          data-long="とろけるチョコレートをたっぷりと。しっかり甘いものが食べたい日に。"
+          data-long="芳醇なバナナと濃厚なショコラの共演。しっかり甘いものが食べたい日に。"
           data-price="300"
           data-images="img/chocobanana.JPG,img/zoom_chocobanana.JPG">
         <button class="card__btn" type="button">
@@ -123,14 +125,14 @@
       <li class="card" data-category="montblanc"
           data-name="モンブラン"
           data-en="Mont Blanc"
-          data-desc="濃い抹茶の香りと、ほろ苦さ。"
-          data-long="濃い抹茶の香りと、ほろ苦さ。甘さ控えめで、大人の方にもおすすめです。"
+          data-desc="栗が奏でる季節の味わい。"
+          data-long="モンブランクリーム使用。秋にしか出会えない、季節限定の贅沢を。"
           data-price="400"
           data-images="img/montblanc.JPG,img/zoom_montblanc.JPG">
         <button class="card__btn" type="button">
           <img src="img/montblanc.JPG" alt="モンブラン" width="400" height="400" loading="eager">
           <span class="card__name">モンブラン</span>
-          <span class="card__desc">濃い抹茶の香りと、ほろ苦さ。</span>
+          <span class="card__desc">栗が奏でる季節の味わい。</span>
           <span class="card__price">¥400</span>
         </button>
       </li>
@@ -138,14 +140,14 @@
       <li class="card" data-category="asort"
           data-name="アソート"
           data-en="asort"
-          data-desc=""
-          data-long=""
+          data-desc="選びきれないあなたに、至福のひととき。"
+          data-long="全5種のフレーバーをひとつずつ。五つの味わいを一度に愉しむ、贅沢なアソート。"
           data-price="500"
           data-images="img/asort.JPG,img/zoom_asort.JPG">
         <button class="card__btn" type="button">
           <img src="img/asort.JPG" alt="アソート" width="400" height="400" loading="eager">
           <span class="card__name">アソート</span>
-          <span class="card__desc"></span>
+          <span class="card__desc">選びきれないあなたに、至福のひととき。</span>
           <span class="card__price">¥500</span>
         </button>
       </li>
@@ -153,15 +155,15 @@
   </section>
 
   <!-- 店舗情報(文化祭向け。不要なら削除) -->
-  <section class="info">
+  <section class="info" id="info">
     <h2 class="info__title">出店情報</h2>
     <dl class="info__list">
       <div class="map">
         <p><img src="img/map_test.png" alt="地図"></p>
 	    </div>
-      <div><dt>場所</dt><dd>出会いの広場</dd></div>
-      <div><dt>日時</dt><dd>11月7日・8日(土・日)</dd></div>
-      <div><dt>お支払い</dt><dd>現金のみ</dd></div>
+      <div><dt>場所</dt><dd>出会いの広場南側。テントにて</dd></div>
+      <div><dt>日時</dt><dd>11月7日(土)10:00～18:00<br>11月8日(日)10:00～16:00</dd></div>
+      <div><dt>お支払い</dt><dd>現金、キャッシュレス決済</dd></div>
     </dl>
     <p class="info__note">※ 数に限りがあります。売り切れの際はご了承ください。</p>
   </section>
@@ -234,6 +236,7 @@
  
   // カテゴリタブ:マウスでもドラッグして横スクロールできるようにする
   var tabsBox = document.querySelector('.tabs');
+  if (tabsBox) { // カテゴリタブを消した場合はこの処理を飛ばす
   var isDown = false, moved = false, startX = 0, startLeft = 0;
   tabsBox.addEventListener('pointerdown', function (e) {
     if (e.pointerType !== 'mouse') return; // スマホは標準のスワイプで動く
@@ -253,6 +256,7 @@
   tabsBox.addEventListener('click', function (e) {
     if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; }
   }, true);
+  }
   
   // 商品詳細
   var sheet = document.getElementById('sheet');

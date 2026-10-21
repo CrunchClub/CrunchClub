@@ -70,6 +70,8 @@ img { background: var(--paper-deep); }
   font-size: 13px; letter-spacing: .14em; text-decoration: none;
 }
 .btn--dark { background: var(--ink); color: var(--paper); }
+.hero__links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn--light { border: 1px solid var(--ink); color: var(--ink); }
 
 /* メニュー */
 .menu { padding: 24px 20px 48px; }
@@ -90,6 +92,8 @@ img { background: var(--paper-deep); }
 .tab.is-active { background: var(--ink); color: var(--paper); }
 
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 14px; }
+/* カテゴリタブを消したとき、タイトルと写真の間をあける */
+.menu__title + .grid { margin-top: 28px; }
 .card[hidden] { display: none; }
 .card__btn { display: block; width: 100%; text-align: left; }
 .card__btn img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; }
