@@ -30,12 +30,13 @@
       <img class="slide" src="img/main_strawberry.JPG" alt="商品の写真4" width="800" height="1000">
     </div>
     <div class="hero__body">
-      <h1 class="hero__title">ひとくちで、<br>しあわせを。</h1>
+      <h1 class="hero__title">ざくっ！？<br>新感覚シュークリーム</h1>
       <p class="hero__text">
-        サクッと、ふわっと、<br>
-        やさしい甘さがひろがる。<br>
-        小さなひと粒に、<br>
-        たくさんのしあわせを詰め込みました。
+        CRUNCH CLUBでは、<br>
+        インドの軽食“プーリー”をアレンジした、<br>
+        お菓子を販売します。<br>
+        ざくざく、ぱりぱりのシュー生地の中に、<br>
+        クリームやフルーツなどを包みました。
       </p>
       <a class="btn btn--dark" href="#menu">メニューを見る</a>
       <div class="dots" id="dots" role="group" aria-label="スライド切り替え"></div>
@@ -53,6 +54,8 @@
       <button class="tab" data-filter="strawberry">いちご</button>
       <button class="tab" data-filter="matcha">抹茶</button>
       <button class="tab" data-filter="choco">チョコレート</button>
+      <button class="tab" data-filter="montblanc">モンブラン</button>
+      <button class="tab" data-filter="asort">アソート</button>
     </nav>
 
     <!-- 商品カード。1枚ぶんをコピーして増やせます -->
@@ -63,9 +66,7 @@
           data-desc="やさしい甘さの定番。どなたにも。"
           data-long="サクッと軽い食感の生地に、ほんのり甘い香り。まずはこれから、という定番のひと粒です。"
           data-price="300"
-          data-allergen="小麦・卵・乳"
-          data-storage="常温(当日中)"
-          data-images="images/plain-1.jpg,images/plain-2.jpg">
+          data-images="img/plain.JPG,img/zoom_plain.JPG">
         <button class="card__btn" type="button">
           <img src="img/plain.JPG" alt="プレーン" width="400" height="400" loading="eager">
           <span class="card__name">プレーン</span>
@@ -80,9 +81,7 @@
           data-desc="甘酸っぱい苺と、なめらかなクリーム。"
           data-long="甘酸っぱい苺と、なめらかなクリーム。ふんわりとした生地に、いちごの果肉をのせた人気のフレーバーです。"
           data-price="300"
-          data-allergen="小麦・卵・乳"
-          data-storage="要冷蔵(当日中)"
-          data-images="images/strawberry-1.jpg,images/strawberry-2.jpg,images/strawberry-3.jpg">
+          data-images="img/strawberry.JPG,img/zoom_strawberry.JPG">
         <button class="card__btn" type="button">
           <img src="img/strawberry.JPG" alt="いちごクリーム" width="400" height="400" loading="eager">
           <span class="card__name">いちごクリーム</span>
@@ -97,9 +96,7 @@
           data-desc="濃い抹茶の香りと、ほろ苦さ。"
           data-long="濃い抹茶の香りと、ほろ苦さ。甘さ控えめで、大人の方にもおすすめです。"
           data-price="300"
-          data-allergen="小麦・卵・乳"
-          data-storage="要冷蔵(当日中)"
-          data-images="images/matcha-1.jpg">
+          data-images="img/matcha.JPG,img/zoom_matcha.JPG">
         <button class="card__btn" type="button">
           <img src="img/matcha.JPG" alt="抹茶" width="400" height="400" loading="eager">
           <span class="card__name">抹茶</span>
@@ -108,32 +105,28 @@
         </button>
       </li>
 
-      <li class="card" data-category="chocobanana"
+      <li class="card" data-category="choco"
           data-name="チョコバナナ"
           data-en="Chocolate"
           data-desc="とろけるチョコレートをたっぷりと。"
           data-long="とろけるチョコレートをたっぷりと。しっかり甘いものが食べたい日に。"
           data-price="300"
-          data-allergen="小麦・卵・乳"
-          data-storage="要冷蔵(当日中)"
-          data-images="images/choco-1.jpg">
+          data-images="img/chocobanana.JPG,img/zoom_chocobanana.JPG">
         <button class="card__btn" type="button">
           <img src="img/chocobanana.JPG" alt="チョコバナナ" width="400" height="400" loading="eager">
-          <span class="card__name">チョコレート</span>
+          <span class="card__name">チョコバナナ</span>
           <span class="card__desc">とろけるチョコレートをたっぷりと。</span>
           <span class="card__price">¥300</span>
         </button>
       </li>
 
-      <li class="card" data-category="mont_blanc"
+      <li class="card" data-category="montblanc"
           data-name="モンブラン"
           data-en="Mont Blanc"
           data-desc="濃い抹茶の香りと、ほろ苦さ。"
           data-long="濃い抹茶の香りと、ほろ苦さ。甘さ控えめで、大人の方にもおすすめです。"
           data-price="400"
-          data-allergen="小麦・卵・乳"
-          data-storage="要冷蔵(当日中)"
-          data-images="images/matcha-1.jpg">
+          data-images="img/montblanc.JPG,img/zoom_montblanc.JPG">
         <button class="card__btn" type="button">
           <img src="img/montblanc.JPG" alt="モンブラン" width="400" height="400" loading="eager">
           <span class="card__name">モンブラン</span>
@@ -142,15 +135,13 @@
         </button>
       </li>
 
-      <li class="card" data-category=""
+      <li class="card" data-category="asort"
           data-name="アソート"
           data-en="asort"
           data-desc=""
           data-long=""
           data-price="500"
-          data-allergen=""
-          data-storage=""
-          data-images="images/matcha-1.jpg">
+          data-images="img/asort.JPG,img/zoom_asort.JPG">
         <button class="card__btn" type="button">
           <img src="img/asort.JPG" alt="アソート" width="400" height="400" loading="eager">
           <span class="card__name">アソート</span>
@@ -166,10 +157,10 @@
     <h2 class="info__title">出店情報</h2>
     <dl class="info__list">
       <div class="map">
-        <p><img src="img/map_lowsat.png" alt="地図"></p>
+        <p><img src="img/map_test.png" alt="地図"></p>
 	    </div>
       <div><dt>場所</dt><dd>出会いの広場</dd></div>
-      <div><dt>日時</dt><dd>○月○日(○)〇:〇〇〜〇:〇〇</dd></div>
+      <div><dt>日時</dt><dd>11月7日・8日(土・日)</dd></div>
       <div><dt>お支払い</dt><dd>現金のみ</dd></div>
     </dl>
     <p class="info__note">※ 数に限りがあります。売り切れの際はご了承ください。</p>
@@ -190,10 +181,6 @@
     <h3 class="sheet__name" id="sheet-name"></h3>
     <p class="sheet__long" id="sheet-long"></p>
     <p class="sheet__price" id="sheet-price"></p>
-    <ul class="sheet__meta">
-      <li><span>特定原材料</span><b id="sheet-allergen"></b></li>
-      <li><span>保存方法</span><b id="sheet-storage"></b></li>
-    </ul>
   </div>
 </dialog>
 
@@ -241,9 +228,32 @@
       cards.forEach(function (c) {
         c.hidden = !(f === 'all' || c.dataset.category === f);
       });
+      tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     });
   });
-
+ 
+  // カテゴリタブ:マウスでもドラッグして横スクロールできるようにする
+  var tabsBox = document.querySelector('.tabs');
+  var isDown = false, moved = false, startX = 0, startLeft = 0;
+  tabsBox.addEventListener('pointerdown', function (e) {
+    if (e.pointerType !== 'mouse') return; // スマホは標準のスワイプで動く
+    isDown = true; moved = false;
+    startX = e.clientX; startLeft = tabsBox.scrollLeft;
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!isDown) return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 5) { moved = true; tabsBox.classList.add('is-dragging'); }
+    tabsBox.scrollLeft = startLeft - dx;
+  });
+  window.addEventListener('pointerup', function () {
+    isDown = false; tabsBox.classList.remove('is-dragging');
+  });
+  // ドラッグ後にボタンが押された扱いにならないようにする
+  tabsBox.addEventListener('click', function (e) {
+    if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; }
+  }, true);
+  
   // 商品詳細
   var sheet = document.getElementById('sheet');
   var $ = function (id) { return document.getElementById(id); };
@@ -255,8 +265,6 @@
       $('sheet-en').textContent = d.en || '';
       $('sheet-long').textContent = d.long || d.desc;
       $('sheet-price').textContent = '¥' + Number(d.price).toLocaleString();
-      $('sheet-allergen').textContent = d.allergen || '-';
-      $('sheet-storage').textContent = d.storage || '-';
       $('sheet-main').src = imgs[0] || '';
       $('sheet-main').alt = d.name;
       var thumbs = $('sheet-thumbs');
