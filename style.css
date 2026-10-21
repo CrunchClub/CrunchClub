@@ -70,7 +70,8 @@ img { background: var(--paper-deep); }
   font-size: 13px; letter-spacing: .14em; text-decoration: none;
 }
 .btn--dark { background: var(--ink); color: var(--paper); }
-.hero__links { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero__links { display: flex; gap: 10px; max-width: 360px; }
+.hero__links .btn { flex: 1; padding-left: 0; padding-right: 0; text-align: center; white-space: nowrap; }
 .btn--light { border: 1px solid var(--ink); color: var(--ink); }
 
 /* メニュー */
